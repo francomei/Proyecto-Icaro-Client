@@ -4,9 +4,9 @@
     <td><mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Nombre de usuario</mat-label>
         <input matInput type="text" formControlName="username"> <br>
-        <p *ngIf="campoValido('username')">
+        <!-- <p *ngIf="campoValido('username')">
           Este campo es requerido
-        </p>
+        </p> -->
      </mat-form-field></td>
 </tr></table>
 
@@ -16,9 +16,9 @@
     <mat-form-field class="example-full-width" appearance="fill" >
       <mat-label>Ingrese su contraseña</mat-label>
       <input matInput [type]="hide ? 'password' : 'text'" formControlName="password"  > <br>
-      <p *ngIf="campoValido('password')">
+      <!-- <p *ngIf="campoValido('password')">
         Este campo es requerido, debe tener al menos 5 caracteres
-      </p>
+      </p> -->
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
@@ -26,7 +26,8 @@
   </td>
 </tr></table>
 
-<button mat-raised-button class="button" type="submit" (click)="Acceder()" target="_blank">Ingresar</button>
+<button mat-raised-button class="button" type="submit" (click)="Acceder()" >Ingresar</button>
+<!-- <button mat-raised-button class="button" (click)="principal()" >Ir al Menu</button> -->
 
 </form>
 

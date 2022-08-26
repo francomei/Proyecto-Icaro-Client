@@ -18,6 +18,10 @@ td {
 
 }
 
+.button{
+  margin-top: 40px;
+}
+
 .example-button-row button{
 
   min-width: 150px;

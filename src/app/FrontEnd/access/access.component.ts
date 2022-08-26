@@ -31,14 +31,16 @@ export class AccessComponent implements OnInit {
   Acceder(){
     const user = { username:this.miformulario.value.username, password:this.miformulario.value.password,};
     console.log(this.miformulario.value)
-    this.userService.Acceder(user).subscribe(
-      data =>{
-        this.userService.setToken(data.token);
-        this.router.navigateByUrl('/');
-        window.open('http://localhost:4200/principal')
+    this.userService.Acceder(user).subscribe(data =>{
+      this.userService.setToken(data.token);
+      this.router.navigateByUrl('/principal');
+      // window.open('http://localhost:4200/principal')
     })
-
   }
+
+  // principal(){
+  //   this.router.navigateByUrl('/principal');
+  // }
 
   guardar(){
     if (this.miformulario.invalid){
