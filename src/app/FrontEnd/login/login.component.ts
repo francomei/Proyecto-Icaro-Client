@@ -26,10 +26,6 @@ hide = true
   ngOnInit(): void {
   }
 
-  // onSubmit(miform:NgForm){
-  //   console.log(miform)
-  // }
-
   miformulario:FormGroup=this.fb.group({
     'firstname': ['',[Validators.required]],
     'lastname': ['',[Validators.required]],
