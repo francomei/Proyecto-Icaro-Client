@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/Users/users.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators, FormControl  } from '@angular/forms';
-
+import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
 
 
 @Component({
@@ -30,24 +29,19 @@ export class AccessComponent implements OnInit {
 
   Acceder(){
     const user = { username:this.miformulario.value.username, password:this.miformulario.value.password,};
-    console.log(this.miformulario.value)
+    // console.log(this.miformulario.value)
     this.userService.Acceder(user).subscribe(data =>{
       this.userService.setToken(data.token);
-      this.router.navigateByUrl('/principal');
-      // window.open('http://localhost:4200/principal')
+      // this.router.navigateByUrl('/principal');
     })
   }
-
-  // principal(){
-  //   this.router.navigateByUrl('/principal');
-  // }
 
   guardar(){
     if (this.miformulario.invalid){
       this.miformulario.markAllAsTouched()
       return
     }
-    this.miformulario.reset()
+    this.router.navigateByUrl('/principal');
   }
 
 
