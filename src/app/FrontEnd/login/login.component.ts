@@ -43,7 +43,6 @@ hide = true
 
   registerUser(){
     const user = {username: this.miformulario.value.username, firstname: this.miformulario.value.firstname, lastname: this.miformulario.value.lastname, password:this.miformulario.value.password, country:this.miformulario.value.country, city:this.miformulario.value.city};
-    // console.log(this.miformulario.value)
     this.userService.login(user).subscribe(data =>{
       this.userService.setToken(data.token);
       this.router.navigateByUrl('/principal');
